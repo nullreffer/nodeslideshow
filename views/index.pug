@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  ul
+    each val in albums
+      li=val
+
+  div#slideshow
+    ul
+      each val in pics
+        li
+          img(src=val)
+
+  script.
+    $(document).ready(function() { $('#slideshow').unslider({ animation: 'fade', autoplay: true, arrows: false}) });
